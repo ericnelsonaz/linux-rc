@@ -148,7 +148,7 @@
 		default_ifmt = "RGB565";
 		pinctrl-names = "default";
 		pinctrl-0 = <&pinctrl_ipu1_di0>;
-		status = "okay";
+		status = "disabled";
 	};
 
 	backlight_lcd {
