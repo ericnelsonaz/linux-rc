@@ -134,9 +134,12 @@
 		fsl,pins = <
 			MX6QDL_PAD_GPIO_5__I2C3_SCL		0x4001b8b1
 			MX6QDL_PAD_GPIO_16__I2C3_SDA		0x4001b8b1
-#define GPIRQ_I2C3_J7	<&gpio1 9 IRQ_TYPE_EDGE_FALLING>
-#define GP_I2C3_J7	<&gpio1 9 GPIO_ACTIVE_LOW>
-			MX6QDL_PAD_GPIO_9__GPIO1_IO09		0x1b0b0
+		>;
+	};
+
+	pinctrl_irdev: irdev_gpio {
+		fsl,pins = <
+			MX6QDL_PAD_EIM_EB2__GPIO2_IO30		0x100b0		/* J25 pin 4 */
 		>;
 	};
 
@@ -363,6 +366,14 @@
 			startup-delay-us = <70000>;
 			enable-active-high;
 		};
+	};
+
+	irdev {
+		compatible = "gpio-ir-receiver";
+		gpios = GPIRQ_IR;
+		pinctrl-names = "default";
+		pinctrl-0 = <&pinctrl_irdev>;
+		linux,rc-map-name = "rc-rc6-mce";
 	};
 
 	sound {
