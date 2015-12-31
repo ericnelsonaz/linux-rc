@@ -137,9 +137,9 @@
 		>;
 	};
 
-	pinctrl_irdev_gpio9: irdev_gpio9 {
+	pinctrl_irdev: irdev_gpio {
 		fsl,pins = <
-			MX6QDL_PAD_GPIO_9__GPIO1_IO09		0x100b0		/* J7 pin 4 - I2C3 */
+			MX6QDL_PAD_EIM_EB2__GPIO2_IO30		0x100b0		/* J25 pin 4 */
 		>;
 	};
 
@@ -370,9 +370,9 @@
 
 	irdev {
 		compatible = "gpio-ir-receiver";
-		gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
+		gpios = GPIRQ_IR;
 		pinctrl-names = "default";
-		pinctrl-0 = <&pinctrl_irdev_gpio9>;
+		pinctrl-0 = <&pinctrl_irdev>;
 		linux,rc-map-name = "rc-rc6-mce";
 	};
 
