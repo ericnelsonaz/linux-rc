@@ -23,6 +23,8 @@
 		mxcfb0 = &mxcfb1;
 		mxcfb1 = &mxcfb2;
 		mxcfb2 = &mxcfb3;
+		mmc0 = &usdhc3;
+		mmc2 = &usdhc1;
 	};
 
 	memory {
