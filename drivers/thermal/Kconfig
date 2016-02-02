@@ -125,6 +125,14 @@ config IMX_THERMAL
 	  cpufreq is used as the cooling device to throttle CPUs when the
 	  passive trip is crossed.
 
+config IMX_THERMAL_TRIP_POINT
+	int "Trip point 0 temperature in degrees C"
+	depends on IMX_THERMAL
+	default 100
+	help
+	  The kernel will throttle back the CPU when this temperature
+	  is reached.
+
 config DEVICE_THERMAL
 	tristate "generic device cooling support"
 	help
