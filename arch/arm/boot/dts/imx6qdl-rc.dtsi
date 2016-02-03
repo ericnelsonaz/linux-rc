@@ -388,7 +388,6 @@
 			"Headphone Jack", "HP_OUT";
 		mux-int-port = <1>;
 		mux-ext-port = <3>;
-		status = "disabled";
 	};
 
 	sound-hdmi {
