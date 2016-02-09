@@ -173,7 +173,7 @@ static int imx_sgtl5000_probe(struct platform_device *pdev)
 	cpu_np = of_parse_phandle(pdev->dev.of_node, "cpu-dai", 0);
 	codec_np = of_parse_phandle(pdev->dev.of_node, "audio-codec", 0);
 	if (!cpu_np || !codec_np) {
-		dev_err(&pdev->dev, "phandle missing or invalid\n");
+		dev_err(&pdev->dev, "cpu-dai or audio-codec missing or invalid\n");
 		ret = -EINVAL;
 		goto fail;
 	}
