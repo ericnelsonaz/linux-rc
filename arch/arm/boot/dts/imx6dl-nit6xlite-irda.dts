@@ -266,8 +266,6 @@
 		fsl,pins = <
 			MX6QDL_PAD_GPIO_5__I2C3_SCL		0x4001b8b1
 			MX6QDL_PAD_GPIO_16__I2C3_SDA		0x4001b8b1
-#define GP_TOUCH_IRQ			<&gpio1 9 IRQ_TYPE_LEVEL_LOW>
-			MX6QDL_PAD_GPIO_9__GPIO1_IO09		0x1b0b0		/* J7 pin 4 - I2C3 */
 #define GP_TS2004_IRQ			<&gpio2 27 IRQ_TYPE_LEVEL_LOW>
 			MX6QDL_PAD_EIM_LBA__GPIO2_IO27		0x1b0b0		/* tsc2004(I2C3) irq */
 			MX6QDL_PAD_KEY_COL2__GPIO4_IO10		0x0b0b0		/* tsc2004(I2C3) *reset */
@@ -596,7 +594,15 @@
 	clock-frequency = <100000>;
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_i2c3>;
-	status = "disabled";
+	status = "okay";
+
+	isl1208@6f {
+		compatible = "isl,isl1208";
+		pinctrl-names = "default";
+		pinctrl-0 = <&pinctrl_rtc>;
+		reg = <0x6f>;
+		interrupts-extended = GP_RTC_IRQ;
+	};
 };
 
 &ldb {
