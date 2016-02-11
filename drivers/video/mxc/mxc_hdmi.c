@@ -98,9 +98,10 @@ MODULE_PARM_DESC(only_cea, "Allow only CEA modes");
  * in HDMI Initialization Step B
  */
 static const struct fb_videomode vga_mode = {
-	/* 640x480 @ 60 Hz, 31.5 kHz hsync */
-	NULL, 60, 640, 480, 39721, 48, 16, 33, 10, 96, 2, 0,
-	FB_VMODE_NONINTERLACED | FB_VMODE_ASPECT_4_3, FB_MODE_IS_VESA,
+	/* 1280x720p@59.94/60Hz 16:9 */
+	NULL, 60, 1280, 720, 13468, 220, 110, 20, 5, 40, 5,
+	FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+	FB_VMODE_NONINTERLACED | FB_VMODE_ASPECT_16_9, 0
 };
 
 enum hdmi_datamap {
