@@ -652,7 +652,7 @@
 };
 
 &pcie {
-	status = "okay";
+	status = "disabled";
 };
 
 /* I2c3(J7) pwm */
