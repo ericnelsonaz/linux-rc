@@ -380,7 +380,7 @@ static void imx2_wdt_shutdown(struct platform_device *pdev)
 		/* we are running, we need to delete the timer but will give
 		 * max timeout before reboot will take place */
 		del_timer_sync(&imx2_wdt.timer);
-		imx2_wdt_set_timeout(IMX2_WDT_MAX_TIME);
+		imx2_wdt_set_timeout(5);
 		imx2_wdt_ping();
 
 		dev_crit(imx2_wdt_miscdev.parent,
